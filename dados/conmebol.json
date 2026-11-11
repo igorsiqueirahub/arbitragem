@@ -1,0 +1,959 @@
+[
+{
+"pid": "16354",
+"comp": "Libertadores",
+"fase": "Fases preliminares",
+"data": "2026-02-03",
+"jogo": "The Strongest x Deportivo Táchira",
+"funcao": "Árbitro",
+"fonte": "Wikipédia"
+},
+{
+"pid": "1100",
+"comp": "Libertadores",
+"fase": "Fases preliminares",
+"data": "2026-02-11",
+"jogo": "Alianza Lima x 2 de Mayo",
+"funcao": "Árbitro",
+"fonte": "Wikipédia"
+},
+{
+"pid": "1128",
+"comp": "Libertadores",
+"fase": "Fase 2",
+"data": "2026-02-17",
+"jogo": "Liverpool x Independiente Medellin",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "1308",
+"comp": "Libertadores",
+"fase": "Fase 2",
+"data": "2026-02-17",
+"jogo": "Liverpool x Independiente Medellin",
+"funcao": "Árbitro",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "1316",
+"comp": "Libertadores",
+"fase": "Fase 2",
+"data": "2026-02-17",
+"jogo": "Liverpool x Independiente Medellin",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "16341",
+"comp": "Libertadores",
+"fase": "Fase 2",
+"data": "2026-02-17",
+"jogo": "Liverpool x Independiente Medellin",
+"funcao": "Quarto árbitro",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "14582",
+"comp": "Libertadores",
+"fase": "Fase 2",
+"data": "2026-02-19",
+"jogo": "Juventud x Guarani",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "14695",
+"comp": "Libertadores",
+"fase": "Fase 2",
+"data": "2026-02-19",
+"jogo": "Juventud x Guarani",
+"funcao": "Quarto árbitro",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "19840",
+"comp": "Libertadores",
+"fase": "Fase 2",
+"data": "2026-02-19",
+"jogo": "Juventud x Guarani",
+"funcao": "Árbitro",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "883",
+"comp": "Libertadores",
+"fase": "Fase 2",
+"data": "2026-02-19",
+"jogo": "Juventud x Guarani",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "1019",
+"comp": "Libertadores",
+"fase": "Fase 2",
+"data": "2026-02-24",
+"jogo": "Independiente Medellín x Liverpool",
+"funcao": "Quarto árbitro",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "1299",
+"comp": "Libertadores",
+"fase": "Fase 2",
+"data": "2026-02-24",
+"jogo": "Independiente Medellín x Liverpool",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "14954",
+"comp": "Libertadores",
+"fase": "Fase 2",
+"data": "2026-02-24",
+"jogo": "Huachipato x Carabobo",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "16341",
+"comp": "Libertadores",
+"fase": "Fase 2",
+"data": "2026-02-24",
+"jogo": "Independiente Medellín x Liverpool",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "16458",
+"comp": "Libertadores",
+"fase": "Fases preliminares",
+"data": "2026-02-24",
+"jogo": "Huachipato x Carabobo",
+"funcao": "Árbitro",
+"fonte": "Conmebol + Wikipédia"
+},
+{
+"pid": "781",
+"comp": "Libertadores",
+"fase": "Fase 2",
+"data": "2026-02-24",
+"jogo": "Huachipato x Carabobo",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "866",
+"comp": "Libertadores",
+"fase": "Fases preliminares",
+"data": "2026-02-24",
+"jogo": "Independiente Medellín x Liverpool",
+"funcao": "Árbitro",
+"fonte": "Conmebol + Wikipédia"
+},
+{
+"pid": "112",
+"comp": "Sul-Americana",
+"fase": "Primeira fase",
+"data": "2026-03-04",
+"jogo": "Atlético Nacional x Millonarios",
+"funcao": "Árbitro",
+"fonte": "Wikipédia"
+},
+{
+"pid": "14695",
+"comp": "Libertadores",
+"fase": "Fase 3",
+"data": "2026-03-04",
+"jogo": "Carabobo x Sporting Cristal",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "16181",
+"comp": "Libertadores",
+"fase": "Fases preliminares",
+"data": "2026-03-04",
+"jogo": "Carabobo x Sporting Cristal",
+"funcao": "Árbitro",
+"fonte": "Conmebol + Wikipédia"
+},
+{
+"pid": "16354",
+"comp": "Libertadores",
+"fase": "Fase 3",
+"data": "2026-03-04",
+"jogo": "Carabobo x Sporting Cristal",
+"funcao": "Quarto árbitro",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "962",
+"comp": "Libertadores",
+"fase": "Fase 3",
+"data": "2026-03-04",
+"jogo": "Carabobo x Sporting Cristal",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "1100",
+"comp": "Sul-Americana",
+"fase": "Primeira fase",
+"data": "2026-03-05",
+"jogo": "Cienciano x Melgar",
+"funcao": "Árbitro",
+"fonte": "Wikipédia"
+},
+{
+"pid": "866",
+"comp": "Libertadores",
+"fase": "Fases preliminares",
+"data": "2026-03-11",
+"jogo": "Deportes Tolima x O'Higgins",
+"funcao": "Árbitro",
+"fonte": "Wikipédia"
+},
+{
+"pid": "112",
+"comp": "Libertadores",
+"fase": "Fase de grupos, grupo B",
+"data": "2026-04-07",
+"jogo": "Deportes Tolima x Universitario",
+"funcao": "Árbitro",
+"fonte": "Wikipédia"
+},
+{
+"pid": "1300",
+"comp": "Sul-Americana",
+"fase": "Fase de grupos, rodada 1",
+"data": "2026-04-07",
+"jogo": "Alianza Atlético x Tigre",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "14582",
+"comp": "Sul-Americana",
+"fase": "Fase de grupos, rodada 1",
+"data": "2026-04-07",
+"jogo": "Alianza Atlético x Tigre",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "16354",
+"comp": "Sul-Americana",
+"fase": "Fase de grupos, grupo A",
+"data": "2026-04-07",
+"jogo": "Alianza Atlético x Tigre",
+"funcao": "Árbitro",
+"fonte": "Conmebol + Wikipédia"
+},
+{
+"pid": "19842",
+"comp": "Sul-Americana",
+"fase": "Fase de grupos, rodada 1",
+"data": "2026-04-07",
+"jogo": "Alianza Atlético x Tigre",
+"funcao": "Quarto árbitro",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "1048",
+"comp": "Libertadores",
+"fase": "Fase de grupos, grupo B",
+"data": "2026-04-08",
+"jogo": "Coquimbo Unido x Nacional",
+"funcao": "Árbitro",
+"fonte": "Wikipédia"
+},
+{
+"pid": "1100",
+"comp": "Libertadores",
+"fase": "Fase de grupos, grupo H",
+"data": "2026-04-09",
+"jogo": "Universidad Central x Libertad",
+"funcao": "Árbitro",
+"fonte": "Wikipédia"
+},
+{
+"pid": "14954",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 2",
+"data": "2026-04-14",
+"jogo": "Universitario x Coquimbo Unido",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "16181",
+"comp": "Libertadores",
+"fase": "Fase de grupos, grupo B",
+"data": "2026-04-14",
+"jogo": "Universitario x Coquimbo Unido",
+"funcao": "Árbitro",
+"fonte": "Conmebol + Wikipédia"
+},
+{
+"pid": "19842",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 2",
+"data": "2026-04-14",
+"jogo": "Universitario x Coquimbo Unido",
+"funcao": "Quarto árbitro",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "781",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 2",
+"data": "2026-04-14",
+"jogo": "Universitario x Coquimbo Unido",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "1048",
+"comp": "Libertadores",
+"fase": "Fase de grupos, grupo H",
+"data": "2026-04-15",
+"jogo": "Libertad x Rosario Central",
+"funcao": "Árbitro",
+"fonte": "Conmebol + Wikipédia"
+},
+{
+"pid": "14582",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 2",
+"data": "2026-04-15",
+"jogo": "Libertad x Rosario Central",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "16354",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 2",
+"data": "2026-04-15",
+"jogo": "Libertad x Rosario Central",
+"funcao": "Quarto árbitro",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "866",
+"comp": "Sul-Americana",
+"fase": "Fase de grupos, grupo A",
+"data": "2026-04-15",
+"jogo": "América de Cali x Alianza Atlético",
+"funcao": "Árbitro",
+"fonte": "Wikipédia"
+},
+{
+"pid": "883",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 2",
+"data": "2026-04-15",
+"jogo": "Libertad x Rosario Central",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "19840",
+"comp": "Sul-Americana",
+"fase": "Fase de grupos, grupo A",
+"data": "2026-04-16",
+"jogo": "Tigre x Macará",
+"funcao": "Árbitro",
+"fonte": "Wikipédia"
+},
+{
+"pid": "866",
+"comp": "Libertadores",
+"fase": "Fase de grupos, grupo B",
+"data": "2026-04-28",
+"jogo": "Deportes Tolima x Coquimbo Unido",
+"funcao": "Árbitro",
+"fonte": "Wikipédia"
+},
+{
+"pid": "1100",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 4",
+"data": "2026-05-05",
+"jogo": "Rosario Central x Libertad",
+"funcao": "Quarto árbitro",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "112",
+"comp": "Libertadores",
+"fase": "Fase de grupos, grupo H",
+"data": "2026-05-05",
+"jogo": "Rosario Central x Libertad",
+"funcao": "Árbitro",
+"fonte": "Conmebol + Wikipédia"
+},
+{
+"pid": "781",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 4",
+"data": "2026-05-05",
+"jogo": "Rosario Central x Libertad",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "883",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 4",
+"data": "2026-05-05",
+"jogo": "Rosario Central x Libertad",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "1019",
+"comp": "Sul-Americana",
+"fase": "Fase de grupos, rodada 4",
+"data": "2026-05-06",
+"jogo": "Macará x Tigre",
+"funcao": "Quarto árbitro",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "1048",
+"comp": "Libertadores",
+"fase": "Fase de grupos, grupo B",
+"data": "2026-05-06",
+"jogo": "Deportes Tolima x Nacional",
+"funcao": "Árbitro",
+"fonte": "Conmebol + Wikipédia"
+},
+{
+"pid": "1299",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 4",
+"data": "2026-05-06",
+"jogo": "Deportes Tolima x Nacional",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "1316",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 4",
+"data": "2026-05-06",
+"jogo": "Deportes Tolima x Nacional",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "14582",
+"comp": "Sul-Americana",
+"fase": "Fase de grupos, rodada 4",
+"data": "2026-05-06",
+"jogo": "Macará x Tigre",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "14954",
+"comp": "Sul-Americana",
+"fase": "Fase de grupos, rodada 4",
+"data": "2026-05-06",
+"jogo": "Alianza Atlético x América de Cali",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "16181",
+"comp": "Sul-Americana",
+"fase": "Fase de grupos, grupo A",
+"data": "2026-05-06",
+"jogo": "Alianza Atlético x América de Cali",
+"funcao": "Árbitro",
+"fonte": "Conmebol + Wikipédia"
+},
+{
+"pid": "16341",
+"comp": "Sul-Americana",
+"fase": "Fase de grupos, rodada 4",
+"data": "2026-05-06",
+"jogo": "Alianza Atlético x América de Cali",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "16354",
+"comp": "Sul-Americana",
+"fase": "Fase de grupos, grupo A",
+"data": "2026-05-06",
+"jogo": "Macará x Tigre",
+"funcao": "Árbitro",
+"fonte": "Conmebol + Wikipédia"
+},
+{
+"pid": "16458",
+"comp": "Sul-Americana",
+"fase": "Fase de grupos, rodada 4",
+"data": "2026-05-06",
+"jogo": "Alianza Atlético x América de Cali",
+"funcao": "Quarto árbitro",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "19840",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 4",
+"data": "2026-05-06",
+"jogo": "Deportes Tolima x Nacional",
+"funcao": "Quarto árbitro",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "962",
+"comp": "Sul-Americana",
+"fase": "Fase de grupos, rodada 4",
+"data": "2026-05-06",
+"jogo": "Macará x Tigre",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "1019",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 5",
+"data": "2026-05-19",
+"jogo": "Rosario Central x Universidad Central",
+"funcao": "Quarto árbitro",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "1100",
+"comp": "Libertadores",
+"fase": "Fase de grupos, grupo H",
+"data": "2026-05-19",
+"jogo": "Rosario Central x Universidad Central",
+"funcao": "Árbitro",
+"fonte": "Conmebol + Wikipédia"
+},
+{
+"pid": "112",
+"comp": "Libertadores",
+"fase": "Fase de grupos, grupo B",
+"data": "2026-05-19",
+"jogo": "Coquimbo Unido x Deportes Tolima",
+"funcao": "Árbitro",
+"fonte": "Conmebol + Wikipédia"
+},
+{
+"pid": "1128",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 5",
+"data": "2026-05-19",
+"jogo": "Independiente del Valle x Libertad",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "1299",
+"comp": "Sul-Americana",
+"fase": "Fase de grupos, rodada 5",
+"data": "2026-05-19",
+"jogo": "América de Cali x Tigre",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "1300",
+"comp": "Sul-Americana",
+"fase": "Fase de grupos, rodada 5",
+"data": "2026-05-19",
+"jogo": "América de Cali x Tigre",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "1308",
+"comp": "Sul-Americana",
+"fase": "Fase de grupos, grupo A",
+"data": "2026-05-19",
+"jogo": "América de Cali x Tigre",
+"funcao": "Árbitro",
+"fonte": "Conmebol + Wikipédia"
+},
+{
+"pid": "14582",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 5",
+"data": "2026-05-19",
+"jogo": "Rosario Central x Universidad Central",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "14695",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 5",
+"data": "2026-05-19",
+"jogo": "Independiente del Valle x Libertad",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "16341",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 5",
+"data": "2026-05-19",
+"jogo": "Coquimbo Unido x Deportes Tolima",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "16458",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 5",
+"data": "2026-05-19",
+"jogo": "Coquimbo Unido x Deportes Tolima",
+"funcao": "Quarto árbitro",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "781",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 5",
+"data": "2026-05-19",
+"jogo": "Coquimbo Unido x Deportes Tolima",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "866",
+"comp": "Libertadores",
+"fase": "Fase de grupos, grupo H",
+"data": "2026-05-19",
+"jogo": "Independiente del Valle x Libertad",
+"funcao": "Árbitro",
+"fonte": "Conmebol + Wikipédia"
+},
+{
+"pid": "962",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 5",
+"data": "2026-05-19",
+"jogo": "Rosario Central x Universidad Central",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "1128",
+"comp": "Sul-Americana",
+"fase": "Fase de grupos, rodada 5",
+"data": "2026-05-21",
+"jogo": "Macará x Alianza Atlético",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "14695",
+"comp": "Sul-Americana",
+"fase": "Fase de grupos, rodada 5",
+"data": "2026-05-21",
+"jogo": "Macará x Alianza Atlético",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "19842",
+"comp": "Sul-Americana",
+"fase": "Fase de grupos, grupo A",
+"data": "2026-05-21",
+"jogo": "Macará x Alianza Atlético",
+"funcao": "Árbitro",
+"fonte": "Conmebol + Wikipédia"
+},
+{
+"pid": "1128",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 6",
+"data": "2026-05-26",
+"jogo": "Universitario x Deportes Tolima",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": false
+},
+{
+"pid": "14695",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 6",
+"data": "2026-05-26",
+"jogo": "Universitario x Deportes Tolima",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": false
+},
+{
+"pid": "16354",
+"comp": "Libertadores",
+"fase": "Fase de grupos, grupo B",
+"data": "2026-05-26",
+"jogo": "Universitario x Deportes Tolima",
+"funcao": "Árbitro",
+"fonte": "Conmebol + Wikipédia"
+},
+{
+"pid": "1048",
+"comp": "Libertadores",
+"fase": "Fase de grupos, grupo H",
+"data": "2026-05-27",
+"jogo": "Independiente del Valle x Rosario Central",
+"funcao": "Árbitro",
+"fonte": "Conmebol + Wikipédia"
+},
+{
+"pid": "1299",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 6",
+"data": "2026-05-27",
+"jogo": "Libertad x Universidad Central",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": false
+},
+{
+"pid": "1316",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 6",
+"data": "2026-05-27",
+"jogo": "Libertad x Universidad Central",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": false
+},
+{
+"pid": "16341",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 6",
+"data": "2026-05-27",
+"jogo": "Independiente del Valle x Rosario Central",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": false
+},
+{
+"pid": "16458",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 6",
+"data": "2026-05-27",
+"jogo": "Independiente del Valle x Rosario Central",
+"funcao": "Quarto árbitro",
+"fonte": "Conmebol",
+"ctx": false
+},
+{
+"pid": "19840",
+"comp": "Libertadores",
+"fase": "Fase de grupos, grupo H",
+"data": "2026-05-27",
+"jogo": "Libertad x Universidad Central",
+"funcao": "Árbitro",
+"fonte": "Conmebol + Wikipédia"
+},
+{
+"pid": "781",
+"comp": "Libertadores",
+"fase": "Fase de grupos, rodada 6",
+"data": "2026-05-27",
+"jogo": "Independiente del Valle x Rosario Central",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": false
+},
+{
+"pid": "1100",
+"comp": "Sul-Americana",
+"fase": "Mata-mata",
+"data": "2026-07-28",
+"jogo": "Tigre x Nacional",
+"funcao": "Árbitro",
+"fonte": "Wikipédia"
+},
+{
+"pid": "1048",
+"comp": "Libertadores",
+"fase": "Mata-mata",
+"data": "2026-08-11",
+"jogo": "Estudiantes x Universidad Católica",
+"funcao": "Árbitro",
+"fonte": "Wikipédia"
+},
+{
+"pid": "1299",
+"comp": "Sul-Americana",
+"fase": "Oitavas",
+"data": "2026-08-12",
+"jogo": "Tigre x Montevideo City Torque",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "14954",
+"comp": "Sul-Americana",
+"fase": "Oitavas",
+"data": "2026-08-12",
+"jogo": "Tigre x Montevideo City Torque",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "16181",
+"comp": "Sul-Americana",
+"fase": "Mata-mata",
+"data": "2026-08-12",
+"jogo": "Tigre x Montevideo City Torque",
+"funcao": "Árbitro",
+"fonte": "Conmebol + Wikipédia"
+},
+{
+"pid": "16354",
+"comp": "Sul-Americana",
+"fase": "Oitavas",
+"data": "2026-08-12",
+"jogo": "Tigre x Montevideo City Torque",
+"funcao": "Quarto árbitro",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "112",
+"comp": "Libertadores",
+"fase": "Oitavas",
+"data": "2026-08-18",
+"jogo": "Deportes Tolima x Independiente del Valle",
+"funcao": "Árbitro",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "1308",
+"comp": "Libertadores",
+"fase": "Oitavas",
+"data": "2026-08-18",
+"jogo": "Deportes Tolima x Independiente del Valle",
+"funcao": "Quarto árbitro",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "14582",
+"comp": "Libertadores",
+"fase": "Oitavas",
+"data": "2026-08-18",
+"jogo": "Deportes Tolima x Independiente del Valle",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "883",
+"comp": "Libertadores",
+"fase": "Oitavas",
+"data": "2026-08-18",
+"jogo": "Deportes Tolima x Independiente del Valle",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "112",
+"comp": "Sul-Americana",
+"fase": "Mata-mata",
+"data": "2026-09-10",
+"jogo": "Cienciano x Montevideo City Torque",
+"funcao": "Árbitro",
+"fonte": "Conmebol + Wikipédia"
+},
+{
+"pid": "1128",
+"comp": "Sul-Americana",
+"fase": "Quartas",
+"data": "2026-09-10",
+"jogo": "Cienciano x Montevideo City Torque",
+"funcao": "VAR",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "16354",
+"comp": "Sul-Americana",
+"fase": "Quartas",
+"data": "2026-09-10",
+"jogo": "Cienciano x Montevideo City Torque",
+"funcao": "Quarto árbitro",
+"fonte": "Conmebol",
+"ctx": true
+},
+{
+"pid": "962",
+"comp": "Sul-Americana",
+"fase": "Quartas",
+"data": "2026-09-10",
+"jogo": "Cienciano x Montevideo City Torque",
+"funcao": "AVAR",
+"fonte": "Conmebol",
+"ctx": true
+}
+]

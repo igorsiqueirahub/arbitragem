@@ -1,0 +1,266 @@
+[
+{
+"comp": "Libertadores",
+"fase": "Matches",
+"pagina": "final stages",
+"data": "2026-08-11",
+"jogo": "Estudiantes ARG x CHI Universidad Católica",
+"arbitro": "Raphael Claus"
+},
+{
+"comp": "Libertadores",
+"fase": "Group B",
+"pagina": "group stage",
+"data": "2026-04-07",
+"jogo": "Deportes Tolima COL x PER Universitario",
+"arbitro": "Wilton Sampaio"
+},
+{
+"comp": "Libertadores",
+"fase": "Group B",
+"pagina": "group stage",
+"data": "2026-04-08",
+"jogo": "Coquimbo Unido CHI x URU Nacional",
+"arbitro": "Raphael Claus"
+},
+{
+"comp": "Libertadores",
+"fase": "Group B",
+"pagina": "group stage",
+"data": "2026-04-14",
+"jogo": "Universitario PER x CHI Coquimbo Unido",
+"arbitro": "Ramon Abatti"
+},
+{
+"comp": "Libertadores",
+"fase": "Group B",
+"pagina": "group stage",
+"data": "2026-04-28",
+"jogo": "Deportes Tolima COL x CHI Coquimbo Unido",
+"arbitro": "Anderson Daronco"
+},
+{
+"comp": "Libertadores",
+"fase": "Group B",
+"pagina": "group stage",
+"data": "2026-05-06",
+"jogo": "Deportes Tolima COL x URU Nacional",
+"arbitro": "Raphael Claus"
+},
+{
+"comp": "Libertadores",
+"fase": "Group B",
+"pagina": "group stage",
+"data": "2026-05-19",
+"jogo": "Coquimbo Unido CHI x COL Deportes Tolima",
+"arbitro": "Wilton Sampaio"
+},
+{
+"comp": "Libertadores",
+"fase": "Group B",
+"pagina": "group stage",
+"data": "2026-05-26",
+"jogo": "Nacional URU x CHI Coquimbo Unido",
+"arbitro": "Paulo Zanovelli"
+},
+{
+"comp": "Libertadores",
+"fase": "Group H",
+"pagina": "group stage",
+"data": "2026-04-09",
+"jogo": "Universidad Central VEN x PAR Libertad",
+"arbitro": "Flavio de Souza"
+},
+{
+"comp": "Libertadores",
+"fase": "Group H",
+"pagina": "group stage",
+"data": "2026-04-15",
+"jogo": "Libertad PAR x ARG Rosario Central",
+"arbitro": "Raphael Claus"
+},
+{
+"comp": "Libertadores",
+"fase": "Group H",
+"pagina": "group stage",
+"data": "2026-05-05",
+"jogo": "Rosario Central ARG x PAR Libertad",
+"arbitro": "Wilton Sampaio"
+},
+{
+"comp": "Libertadores",
+"fase": "Group H",
+"pagina": "group stage",
+"data": "2026-05-19",
+"jogo": "Rosario Central ARG x VEN Universidad Central",
+"arbitro": "Flavio de Souza"
+},
+{
+"comp": "Libertadores",
+"fase": "Group H",
+"pagina": "group stage",
+"data": "2026-05-19",
+"jogo": "Independiente del Valle ECU x PAR Libertad",
+"arbitro": "Anderson Daronco"
+},
+{
+"comp": "Libertadores",
+"fase": "Group H",
+"pagina": "group stage",
+"data": "2026-05-27",
+"jogo": "Independiente del Valle ECU x ARG Rosario Central",
+"arbitro": "Raphael Claus"
+},
+{
+"comp": "Libertadores",
+"fase": "Group H",
+"pagina": "group stage",
+"data": "2026-05-27",
+"jogo": "Libertad PAR x VEN Universidad Central",
+"arbitro": "Rafael Klein"
+},
+{
+"comp": "Libertadores",
+"fase": "Matches",
+"pagina": "qualifying stages",
+"data": "2026-02-03",
+"jogo": "The Strongest BOL x VEN Deportivo Táchira",
+"arbitro": "Paulo Zanovelli"
+},
+{
+"comp": "Libertadores",
+"fase": "Matches",
+"pagina": "qualifying stages",
+"data": "2026-02-11",
+"jogo": "Alianza Lima PER x PAR 2 de Mayo",
+"arbitro": "Flavio de Souza"
+},
+{
+"comp": "Libertadores",
+"fase": "Matches",
+"pagina": "qualifying stages",
+"data": "2026-02-24",
+"jogo": "Huachipato CHI x VEN Carabobo",
+"arbitro": "Rodrigo Pereira"
+},
+{
+"comp": "Libertadores",
+"fase": "Matches",
+"pagina": "qualifying stages",
+"data": "2026-02-24",
+"jogo": "Independiente Medellín COL x URU Liverpool",
+"arbitro": "Anderson Daronco"
+},
+{
+"comp": "Libertadores",
+"fase": "Matches",
+"pagina": "qualifying stages",
+"data": "2026-03-11",
+"jogo": "Deportes Tolima COL x CHI O'Higgins",
+"arbitro": "Anderson Daronco"
+},
+{
+"comp": "Libertadores",
+"fase": "Matches",
+"pagina": "qualifying stages",
+"data": "2026-03-04",
+"jogo": "Carabobo VEN x PER Sporting Cristal",
+"arbitro": "Ramon Abatti"
+},
+{
+"comp": "Sul-Americana",
+"fase": "Matches",
+"pagina": "final stages",
+"data": "2026-07-28",
+"jogo": "Tigre ARG x URU Nacional",
+"arbitro": "Flavio de Souza"
+},
+{
+"comp": "Sul-Americana",
+"fase": "Matches",
+"pagina": "final stages",
+"data": "2026-08-12",
+"jogo": "Tigre ARG x URU Montevideo City Torque",
+"arbitro": "Ramon Abatti"
+},
+{
+"comp": "Sul-Americana",
+"fase": "Matches",
+"pagina": "final stages",
+"data": "2026-09-10",
+"jogo": "Cienciano PER x URU Montevideo City Torque",
+"arbitro": "Wilton Sampaio"
+},
+{
+"comp": "Sul-Americana",
+"fase": "Matches",
+"pagina": "first stage",
+"data": "2026-03-04",
+"jogo": "Atlético Nacional COL x COL Millonarios",
+"arbitro": "Wilton Sampaio"
+},
+{
+"comp": "Sul-Americana",
+"fase": "Matches",
+"pagina": "first stage",
+"data": "2026-03-05",
+"jogo": "Cienciano PER x PER Melgar",
+"arbitro": "Flavio de Souza"
+},
+{
+"comp": "Sul-Americana",
+"fase": "Group A",
+"pagina": "group stage",
+"data": "2026-04-07",
+"jogo": "Alianza Atlético PER x ARG Tigre",
+"arbitro": "Paulo Zanovelli"
+},
+{
+"comp": "Sul-Americana",
+"fase": "Group A",
+"pagina": "group stage",
+"data": "2026-04-15",
+"jogo": "América de Cali COL x PER Alianza Atlético",
+"arbitro": "Anderson Daronco"
+},
+{
+"comp": "Sul-Americana",
+"fase": "Group A",
+"pagina": "group stage",
+"data": "2026-04-16",
+"jogo": "Tigre ARG x ECU Macará",
+"arbitro": "Rafael Klein"
+},
+{
+"comp": "Sul-Americana",
+"fase": "Group A",
+"pagina": "group stage",
+"data": "2026-05-06",
+"jogo": "Macará ECU x ARG Tigre",
+"arbitro": "Paulo Zanovelli"
+},
+{
+"comp": "Sul-Americana",
+"fase": "Group A",
+"pagina": "group stage",
+"data": "2026-05-06",
+"jogo": "Alianza Atlético PER x COL América de Cali",
+"arbitro": "Ramon Abatti"
+},
+{
+"comp": "Sul-Americana",
+"fase": "Group A",
+"pagina": "group stage",
+"data": "2026-05-19",
+"jogo": "América de Cali COL x ARG Tigre",
+"arbitro": "Bruno Arleu"
+},
+{
+"comp": "Sul-Americana",
+"fase": "Group A",
+"pagina": "group stage",
+"data": "2026-05-21",
+"jogo": "Macará ECU x PER Alianza Atlético",
+"arbitro": "Matheus Candançan"
+}
+]

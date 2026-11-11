@@ -1,0 +1,318 @@
+<title>VAR na geladeira</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: coluna única; ranking em barras horizontais; perfil abre no lugar via #hash */
+:root{
+  --bg:#f3f5f2; --surface:#ffffff; --fg:#14201a; --fg2:#4a5a51; --muted:#6f7d75; --line:#dde3de;
+  --bar:#1f6b45; --bar-soft:#cfe3d6; --card:#e0ad12; --card-ink:#2e2300; --cdb:#2f5d9e;
+  --pause:#e6e9e4; --troca:#b4442c;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif; --body:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1512; --surface:#16201b; --fg:#e7eee9; --fg2:#a9b8af; --muted:#8a9a91; --line:#2a372f;
+  --bar:#5dbb86; --bar-soft:#22392c; --card:#f2c230; --card-ink:#2a2000; --cdb:#7fa8e6; --pause:#1d2822; --troca:#ef7a5e; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1512; --surface:#16201b; --fg:#e7eee9; --fg2:#a9b8af; --muted:#8a9a91; --line:#2a372f;
+  --bar:#5dbb86; --bar-soft:#22392c; --card:#f2c230; --card-ink:#2a2000; --cdb:#7fa8e6; --pause:#1d2822; --troca:#ef7a5e; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:920px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--display);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2);font-size:14px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,54px);line-height:1;margin:6px 0 12px;text-wrap:balance}
+h2{font-family:var(--display);font-weight:700;font-size:26px;margin:0;line-height:1.1}
+.lede{max-width:65ch;color:var(--fg2);margin:0}
+.lede b{color:var(--fg)}
+.method{font-size:13px;color:var(--muted);max-width:70ch;margin:0}
+.method b{color:var(--fg2)}
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface)}
+.seg button{font:600 13px var(--body);padding:7px 12px;border:0;background:transparent;color:var(--fg2);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+button:focus-visible{outline:2px solid var(--card);outline-offset:2px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--fg2)}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.sw{width:14px;height:10px;border-radius:2px;background:var(--bar);display:inline-block;flex:none}
+.sw.hatch{background:repeating-linear-gradient(135deg,var(--bar) 0 3px,var(--bar-soft) 3px 6px)}
+.chart{display:flex;flex-direction:column;gap:2px}
+.row{display:grid;grid-template-columns:minmax(120px,220px) 1fr;gap:12px;align-items:center;padding:2px 0}
+.name{font:500 14px var(--body);color:var(--fg);background:none;border:0;padding:0;text-align:left;cursor:pointer;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.name:hover{text-decoration-color:var(--fg)}
+.name small{color:var(--muted);font-weight:400;margin-left:5px}
+.track{position:relative;height:24px;display:flex;align-items:center;gap:8px;min-width:0}
+.bar{height:16px;border-radius:0 4px 4px 0;background:var(--bar);min-width:3px;flex:none;cursor:pointer}
+.bar.hatch{background:repeating-linear-gradient(135deg,var(--bar) 0 3px,var(--bar-soft) 3px 6px)}
+.val{font:700 17px var(--display);font-variant-numeric:tabular-nums;white-space:nowrap}
+.val em{font:400 12px var(--body);color:var(--muted);font-style:normal;margin-left:6px}
+.axis{display:grid;grid-template-columns:minmax(120px,220px) 1fr;gap:12px;font-size:11px;color:var(--muted);border-top:1px solid var(--line);padding-top:4px}
+.ticks{position:relative;height:14px}
+.ticks span{position:absolute;transform:translateX(-50%);font-variant-numeric:tabular-nums}
+#tip{position:fixed;pointer-events:none;background:var(--fg);color:var(--bg);font-size:12px;padding:8px 10px;border-radius:6px;max-width:280px;z-index:20;line-height:1.4}
+.cell.troca{overflow:visible}
+.cell.troca::before{content:"";position:absolute;left:-3px;top:-6px;bottom:-6px;width:2px;background:var(--troca)}
+.tl-wrap{overflow-x:auto}
+.tl{min-width:620px;display:flex;flex-direction:column}
+.tl-row{display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:12px;align-items:center}
+.tl-track{position:relative;height:24px}
+.tl-track .pz{position:absolute;top:0;bottom:0;background:var(--pause)}
+.tl-track .tr{position:absolute;top:0;bottom:0;width:2px;background:var(--troca);z-index:2}
+.tl-track .span{position:absolute;top:7px;height:10px;background:var(--bar);border-radius:2px;cursor:pointer;z-index:1}
+.tl-track .span.hatch{background:repeating-linear-gradient(135deg,var(--bar) 0 3px,var(--bar-soft) 3px 6px)}
+.tl-track .tk{position:absolute;top:8px;width:2px;height:8px;background:var(--muted);transform:translateX(-1px)}
+.tk-sw{display:inline-block;width:2px;height:10px;background:var(--muted)}
+.tl-head .tl-track{height:34px}
+.tl-head .mo{position:absolute;bottom:2px;font-size:11px;color:var(--muted);transform:translateX(-50%)}
+.tl-head .trl{position:absolute;top:0;font-size:11px;font-weight:600;color:var(--troca);white-space:nowrap;transform:translateX(-50%)}
+.tl-row .name{font-size:13px}
+.era{font-size:11px;font-weight:600;padding:1px 6px;border-radius:3px;white-space:nowrap;border:1px solid var(--line);color:var(--fg2)}
+.obs{font-size:12px;color:var(--fg2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.obs.none{font-weight:600;color:var(--fg)}
+.outros{margin:6px 0 0;padding-left:18px;font-size:12px;color:var(--fg2);line-height:1.5}
+div.outros{padding-left:0}
+.sep{font-size:12px;color:var(--fg2);border-top:1px dashed var(--line);margin-top:10px;padding:8px 0 2px}
+.sep b{color:var(--fg)}
+.note{font-size:14px;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;max-width:70ch;margin:0}
+.back{font:600 13px var(--body);color:var(--fg2);background:none;border:0;padding:0;cursor:pointer;align-self:flex-start}
+.phead{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center}
+.pill{font:600 11px var(--body);letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:var(--card);color:var(--card-ink)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media (max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.stat b{display:block;font:800 32px/1 var(--display);font-variant-numeric:tabular-nums;margin-bottom:4px}
+.stat span{font-size:12px;color:var(--fg2)}
+.strip-wrap{overflow-x:auto}
+.strip,.strip-lbl{display:grid;grid-template-columns:repeat(38,minmax(14px,1fr));gap:2px;min-width:580px}
+.cell{height:28px;border-radius:2px;background:var(--line);position:relative;box-sizing:border-box}
+.cell.on{background:var(--bar)}
+.cell.gap{box-shadow:inset 0 -5px 0 var(--card)}
+.cell.fut{background:transparent;border:1px dashed var(--line)}
+.strip-lbl{font-size:10px;color:var(--muted);font-variant-numeric:tabular-nums;margin-top:3px}
+.strip-lbl span{text-align:center}
+.cdbmark{position:absolute;top:3px;left:50%;transform:translateX(-50%);width:7px;height:7px;border-radius:50%;background:var(--cdb);box-shadow:0 0 0 1.5px var(--surface)}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-weight:600;color:var(--fg2);border-bottom:1px solid var(--line);padding:6px 8px;white-space:nowrap}
+td{border-bottom:1px solid var(--line);padding:7px 8px;vertical-align:top;font-variant-numeric:tabular-nums}
+td:first-child{white-space:nowrap}
+tr.gaprow td{background:color-mix(in srgb,var(--card) 20%,transparent);font-size:12px}
+.tag{font-size:11px;font-weight:600;padding:1px 6px;border-radius:3px;white-space:nowrap}
+.tag.a{background:var(--bar-soft);color:var(--fg)}
+.tag.w{background:color-mix(in srgb,var(--card) 35%,transparent);color:var(--fg)}
+.cdbmark.wc{background:var(--card);top:auto;bottom:3px}
+.tag.c{background:color-mix(in srgb,var(--cdb) 24%,transparent);color:var(--fg)}
+section{display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
+@media (max-width:560px){.row,.axis{grid-template-columns:118px 1fr}.val em{display:none}}
+@media (prefers-reduced-motion:no-preference){.bar{transition:width .35s ease}}
+</style>
+<div class="wrap">
+  <div id="home">
+    <section>
+      <div>
+        <div class="eyebrow">Arbitragem de vídeo · Série A e Copa do Brasil 2026 · <a href="index.html" style="color:inherit">ver árbitros de campo</a></div>
+        <h1>Quanto tempo cada VAR do quadro PRO ficou fora da cabine na elite</h1>
+        <p class="lede" id="lede"></p>
+      </div>
+      <div class="toolbar">
+        <div class="seg" role="group" aria-label="Medida do hiato">
+          <button id="m-rod" aria-pressed="true">Rodadas da Série A</button>
+          <button id="m-dias" aria-pressed="false">Dias, sem a pausa da Copa</button>
+        </div>
+        <div class="legend">
+          <span><i class="sw"></i>Entre dois jogos</span>
+          <span><i class="sw hatch"></i>Antes da estreia no ano ou desde o último jogo</span>
+        </div>
+      </div>
+      <div>
+        <div class="chart" id="chart"></div>
+        <div class="axis"><span></span><div class="ticks" id="ticks"></div></div>
+      </div>
+    </section>
+    <section>
+      <div>
+        <h2>Quando cada hiato aconteceu</h2>
+        <p class="lede" id="tl-lede" style="margin-top:8px"></p>
+      </div>
+      <div class="legend">
+        <span><i class="sw"></i>Maior hiato (em rodadas)</span>
+        <span><i class="tk-sw"></i>Jogo na elite</span>
+        <span><i class="sw" style="background:var(--pause)"></i>Pausa da Copa do Mundo</span>
+        <span><i class="sw" style="width:2px;height:14px;background:var(--troca)"></i>Troca na Comissão de Arbitragem (9/6)</span>
+      </div>
+      <div class="tl-wrap"><div class="tl" id="tl"></div></div>
+      <p class="method" id="method"></p>
+    </section>
+  </div>
+  <div id="perfil" hidden></div>
+</div>
+<div id="tip" hidden></div>
+<script>
+const D = __DATA__;
+const MESES=["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+const fd = s => { const [y,m,d]=s.split("-"); return `${+d} ${MESES[m-1]}`; };
+const fdb = s => { const [d,m]=s.split("/"); return `${d}/${m}`; };
+const iso = s => { const [d,m,y]=s.split("/"); return `${y}-${m}-${d}`; };
+const APELIDO={"Rodrigo Nunes de Sa": "Rodrigo Nunes de Sá", "Diego Pombo Lopez": "Diego Pombo", "Rodrigo Guarizo Ferreira do Amaral": "Rodrigo Guarizo", "Pablo Ramon Goncalves Pinheiro": "Pablo Ramon", "Rodolpho Toski Marques": "Rodolpho Toski", "Caio Max Augusto Vieira": "Caio Max", "Daniel Nobre Bins": "Daniel Bins", "Rodrigo D Alonso Ferreira": "Rodrigo D'Alonso", "Marco Aurelio Augusto Fazekas Ferreira": "Marco Fazekas", "Wagner Reway": "Wagner Reway", "Jonathan Benkenstein Pinheiro": "Jonathan Benkenstein", "Lucas Paulo Torezin": "Lucas Torezin", "Wagner do Nascimento Magalhaes": "Wagner Magalhães", "Flavio Rodrigues de Souza": "Flávio Rodrigues de Souza", "Rafael Rodrigo Klein": "Rafael Klein", "Wilton Pereira Sampaio": "Wilton Sampaio", "Davi De Oliveira Lacerda": "Davi Lacerda", "Paulo Cesar Zanovelli da Silva": "Paulo Zanovelli", "Braulio da Silva Machado": "Braulio Machado", "Felipe Fernandes de Lima": "Felipe Fernandes de Lima", "Lucas Casagrande": "Lucas Casagrande", "Alex Gomes Stefano": "Alex Stefano", "Anderson Daronco": "Anderson Daronco", "Rodrigo Jose Pereira de Lima": "Rodrigo José Pereira de Lima", "Savio Pereira Sampaio": "Sávio Sampaio", "Matheus Delgado Candançan": "Matheus Candançan", "Raphael Claus": "Raphael Claus", "Ramon Abatti Abel": "Ramon Abatti", "Bruno Arleu de Araujo": "Bruno Arleu", "Charly Wendy Straub Deretti": "Charly Deretti", "Daiane Muniz": "Daiane Muniz", "Edina Alves Batista": "Edina Alves"};
+const short = n => APELIDO[n] || (()=>{ const p=n.split(" "); return p.length>2 ? p[0]+" "+p[p.length-1] : n; })();
+const esc = s => String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let metric="rod";
+const arbs=D.arbitros;
+const PARALELO=[];
+const PAR=a=>PARALELO.includes(a.nome);
+const main=arbs.filter(a=>!PAR(a));
+const gapOf=a=>metric==="rod"?a.gaps[a.best]:a.gaps[a.bestDias];
+const valOf=g=>metric==="rod"?g.rodadas.length:g.util;
+const diasTxt=g=>g.util===g.dias?`${g.dias} dias`:`${g.util} dias fora a pausa da Copa (${g.dias} corridos)`;
+const plural=(n,s,p)=>`${n} ${n===1?s:p}`;
+function rangeTxt(r){return r.length?(r.length===1?`rodada ${r[0]}`:`rodadas ${r[0]} a ${r[r.length-1]}`):"nenhuma rodada";}
+function gapText(g){
+  const n=plural(g.rodadas.length,"rodada","rodadas");
+  if(g.tipo==="inicio") return `Do início do Brasileiro (${fd(g.ini)}) até a estreia, em ${fd(g.fim)}: ${diasTxt(g)} e ${n} da Série A (${rangeTxt(g.rodadas)})`;
+  if(g.tipo==="aberto") return `Desde o último jogo (${fd(g.ini)}) até hoje: ${diasTxt(g)} e ${n} da Série A (${rangeTxt(g.rodadas)}). Hiato em aberto`;
+  return `De ${fd(g.ini)} a ${fd(g.fim)}: ${diasTxt(g)} e ${n} da Série A sem ser VAR na elite (${rangeTxt(g.rodadas)})`;
+}
+function resumo(g,curto){
+  const o=g.outros||[];
+  if(!o.length) return curto?"sem escala":"Não teve nenhuma escala (Série A, Série B ou Copa do Brasil, em qualquer função) nesse período";
+  const nb=o.filter(x=>x.comp==="Série B"&&x.funcao==="VAR").length;
+  const outras=o.filter(x=>!(x.comp==="Série B"&&x.funcao==="VAR"));
+  const porF={}; outras.forEach(x=>{const k=x.funcao;porF[k]=(porF[k]||0)+1});
+  if(curto){const p=[]; if(nb) p.push(`${nb} de VAR na Série B`); for(const[k,v] of Object.entries(porF)) p.push(`${v} de ${k}`); return p.join(" · ");}
+  const p=[]; if(nb) p.push(`foi VAR em ${plural(nb,"jogo","jogos")} da Série B`);
+  const porC={}; outras.forEach(x=>{const k=`${x.funcao} (${x.comp})`;porC[k]=(porC[k]||0)+1});
+  for(const[k,v] of Object.entries(porC)) p.push(`${v}x como ${k}`);
+  return "Nesse período, "+p.join("; ");
+}
+function outrosHtml(g){
+  const o=g.outros||[]; if(!o.length) return `<div class="outros">Sem nenhuma escala no período.</div>`;
+  return `<ul class="outros">${o.map(x=>{const [y,m,d]=x.data.split("-");return `<li>${d}/${m} · ${x.funcao==="Árbitro"?"<b>Árbitro</b>":x.funcao} na ${x.comp} (${esc(x.etapa)}): ${esc(x.jogo)}</li>`}).join("")}</ul>`;
+}
+const tip=document.getElementById("tip");
+function showTip(e,html){tip.innerHTML=html;tip.hidden=false;tip.style.left=Math.min(e.clientX+14,innerWidth-296)+"px";tip.style.top=(e.clientY+16)+"px";}
+const go=id=>{location.hash="arbitro-"+id};
+function drawChart(){
+  const list=[...arbs].sort((a,b)=>valOf(gapOf(b))-valOf(gapOf(a))||gapOf(b).util-gapOf(a).util||gapOf(b).rodadas.length-gapOf(a).rodadas.length);
+  const max=Math.max(...list.map(a=>valOf(gapOf(a))));
+  const step=metric==="rod"?5:30, top=Math.ceil(max/step)*step;
+  const el=document.getElementById("chart"); el.innerHTML="";
+  const ordem=[...list.filter(a=>!PAR(a)),...(list.some(PAR)?[null,...list.filter(PAR)]:[])];
+  for(const a of ordem){
+    if(a===null){const h=document.createElement("div");h.className="sep";h.innerHTML=`<b>Fora da comparação</b> · trilha paralela no futebol feminino, em preparação para a Copa do Mundo Feminina de 2027`;el.append(h);continue;}
+    const g=gapOf(a), v=valOf(g);
+    const row=document.createElement("div"); row.className="row";
+    const b=document.createElement("button"); b.className="name"; b.innerHTML=`${esc(short(a.nome))}<small>${a.uf}</small>`; b.title=a.nome; b.onclick=()=>go(a.id);
+    const t=document.createElement("div"); t.className="track";
+    const bar=document.createElement("div"); bar.className="bar"+(g.tipo!=="entre"?" hatch":""); bar.style.width=`calc((100% - 120px) * ${v/top})`;
+    bar.onmousemove=e=>showTip(e,`<b>${esc(a.nome)}</b> · ${a.cat}<br>${gapText(g)}.<br>Período ${eraTxt(g)}.<br>${resumo(g)}.`); bar.onmouseleave=()=>tip.hidden=true; bar.onclick=()=>go(a.id);
+    const lab=document.createElement("div"); lab.className="val";
+    lab.innerHTML= metric==="rod" ? `${v}<em>${g.util} dias</em>` : `${v} dias<em>${plural(g.rodadas.length,"rodada","rodadas")}</em>`;
+    const ob=document.createElement("span"); ob.className="obs"+((g.outros||[]).length?"":" none"); ob.textContent=resumo(g,true);
+    t.append(bar,lab,ob); row.append(b,t); el.append(row);
+  }
+  const tk=document.getElementById("ticks"); tk.innerHTML="";
+  for(let v=0;v<=top;v+=step){const s=document.createElement("span");s.textContent=v;s.style.left=`calc((100% - 120px) * ${v/top})`;tk.append(s);}
+  document.getElementById("m-rod").setAttribute("aria-pressed",metric==="rod");
+  document.getElementById("m-dias").setAttribute("aria-pressed",metric==="dias");
+}
+const TROCA="2026-06-09";
+function era(g){ if(g.fim<=TROCA) return "Cintra"; if(g.ini>=TROCA) return "Ricci"; return "troca"; }
+const eraTxt=g=>({Cintra:"sob Rodrigo Cintra",Ricci:"sob Sandro Meira Ricci",troca:"atravessa a troca de Cintra por Ricci"})[era(g)];
+function drawTimeline(){
+  const T0=Date.parse("2026-01-28"), T1=Date.parse(D.hoje);
+  const x=s=>((Date.parse(s)-T0)/(T1-T0)*100).toFixed(2)+"%";
+  const w=(a,b)=>((Date.parse(b)-Date.parse(a))/(T1-T0)*100).toFixed(2)+"%";
+  const el=document.getElementById("tl"); el.innerHTML="";
+  const base=`<i class="pz" style="left:${x("2026-06-01")};width:${w("2026-06-01","2026-07-16")}"></i><i class="tr" style="left:${x(TROCA)}"></i>`;
+  let mo=""; for(let m=2;m<=11;m++){const d=`2026-${String(m).padStart(2,"0")}-01`; mo+=`<span class="mo" style="left:${x(d)}">${MESES[m-1]}</span>`;}
+  el.insertAdjacentHTML("beforeend",`<div class="tl-row tl-head"><span></span><div class="tl-track">${base}<span class="trl" style="left:${x(TROCA)}">Ricci assume</span>${mo}</div></div>`);
+  const ord=a=>[-a.gaps[a.best].rodadas.length,-a.gaps[a.best].util];
+  const cmp=(a,b)=>{const p=ord(a),q=ord(b);return p[0]-q[0]||p[1]-q[1]};
+  const lista=[...main].sort(cmp);
+  for(const a of lista){
+    if(a===null){el.insertAdjacentHTML("beforeend",`<div class="sep">Fora da comparação · trilha do futebol feminino</div>`);continue;}
+    const g=a.gaps[a.best];
+    const row=document.createElement("div"); row.className="tl-row";
+    const b=document.createElement("button"); b.className="name"; b.innerHTML=`${esc(short(a.nome))}<small>${g.rodadas.length} rod.</small>`; b.title=a.nome; b.onclick=()=>go(a.id);
+    const t=document.createElement("div"); t.className="tl-track"; t.innerHTML=base+a.jogos.map(j=>`<i class="tk" style="left:${x(iso(j.data))}"></i>`).join("");
+    const sp=document.createElement("i"); sp.className="span"+(g.tipo!=="entre"?" hatch":""); sp.style.left=x(g.ini); sp.style.width=w(g.ini,g.fim);
+    sp.onmousemove=e=>showTip(e,`<b>${esc(a.nome)}</b><br>${gapText(g)}.<br>Período ${eraTxt(g)}.<br>${resumo(g)}.`); sp.onmouseleave=()=>tip.hidden=true; sp.onclick=()=>go(a.id);
+    t.append(sp); row.append(b,t); el.append(row);
+  }
+  const c={Cintra:[],Ricci:[],troca:[]}; main.forEach(a=>c[era(a.gaps[a.best])].push(a));
+  const nomes=l=>l.map(a=>short(a.nome)).join(", ");
+  document.getElementById("tl-lede").innerHTML=`Rodrigo Cintra foi demitido da presidência da Comissão de Arbitragem da CBF em 9 de junho, durante a pausa da Copa do Mundo, e Sandro Meira Ricci assumiu no lugar. Dos ${main.length} VARs na comparação, ${c.Ricci.length} tiveram o maior hiato inteiro já sob Ricci (${nomes(c.Ricci)}), ${c.Cintra.length} sob Cintra (${nomes(c.Cintra)})${c.troca.length?` e ${c.troca.length} num hiato que atravessa a troca (${nomes(c.troca)})`:""}. Os tracinhos marcam cada jogo em que ele foi o VAR na elite.`;
+}
+document.getElementById("m-rod").onclick=()=>{metric="rod";drawChart()};
+document.getElementById("m-dias").onclick=()=>{metric="dias";drawChart()};
+
+(function(){
+  const s=[...main].sort((a,b)=>b.gaps[b.best].rodadas.length-a.gaps[a.best].rodadas.length||b.gaps[b.best].dias-a.gaps[a.best].dias);
+  const t=s[0], g=t.gaps[t.best], t2=s[1], g2=t2.gaps[t2.best];
+  const sem=main.filter(a=>!(a.gaps[a.best].outros||[]).length).map(a=>short(a.nome));
+  let txt=`Entre os ${main.length} VARs da categoria VAR-FIFA-PRO, o maior período sem cabine na elite é de <b>${esc(t.nome)}</b>: ${g.rodadas.length} rodadas da Série A, de ${fd(g.ini)} ${g.tipo==="aberto"?"até hoje, ainda em aberto":`a ${fd(g.fim)}`} (${diasTxt(g)}). Logo atrás vem <b>${esc(t2.nome)}</b>, com ${g2.rodadas.length} rodadas (${fd(g2.ini)} a ${fd(g2.fim)}). `;
+  { const cm=main.filter(a=>a.jogos.some(j=>j.comp==="Libertadores"||j.comp==="Sul-Americana")); const n=cm.reduce((t,a)=>t+a.jogos.filter(j=>j.comp==="Libertadores"||j.comp==="Sul-Americana").length,0);
+    txt+=`Dos ${main.length} na comparação, ${cm.length} trabalharam ${n} jogos de Libertadores e Sul-Americana como VAR (${cm.map(a=>short(a.nome)).join(", ")}), e esses jogos entram na conta como jogos da elite. `; }
+  txt+=`Os jejuns dos VARs são bem mais curtos que os dos árbitros de campo: a maioria não passa de 3 rodadas. ${sem.length?`Ficaram sem nenhuma escala durante o maior hiato: ${sem.join(", ")}. `:""}Clique no nome para abrir o perfil com todos os jogos.`;
+  document.getElementById("lede").innerHTML=txt;
+  document.getElementById("method").innerHTML=`<b>Como foi feito.</b> Escalas oficiais da CBF da Série A (rodadas 1 a 34, já disputadas) e da Copa do Brasil (1ª fase às semifinais), consultadas em ${fd(D.hoje)}. Conta só a função de VAR (a cabine principal); AVAR e funções de campo ficam fora. Quadro = categoria VAR-FIFA-PRO, como aparece nas escalas. Árbitros de campo que fazem VAR de vez em quando (como Daiane Muniz e Charly Deretti) e os VARs das categorias AB e MASTER não entram. O hiato em <b>rodadas</b> conta quantas rodadas da Série A aconteceram entre duas escalas do VAR (a data de cada rodada é a mediana dos seus jogos, então partidas adiadas não distorcem a conta), por isso a pausa da Copa do Mundo e as datas Fifa não inflam o número. Na contagem em <b>dias</b>, as datas Fifa entram, mas a pausa da Copa (1/6 a 15/7, sem Série A nem Copa do Brasil) é descontada. Rodolpho Toski Marques foi o VAR brasileiro na Copa do Mundo; o maior hiato dele é em outubro, então o Mundial não interfere na conta. A rodada 35 ainda não tem escala divulgada. <b>Libertadores e Sul-Americana:</b> jogos como VAR nos torneios da Conmebol contam como jogos da elite e interrompem o hiato. Fontes da Conmebol: os jogos de Libertadores e Sul-Americana como árbitro central vêm das páginas da Wikipédia de cada torneio (todas as fases, conferidas com as planilhas oficiais), e as demais funções (VAR, AVAR, quarto árbitro) vêm das planilhas de designação publicadas pela Conmebol. Não foram encontradas as planilhas de Libertadores da fase 1, da volta da fase 3, das fechas 1 e 3, da ida das oitavas e quartas e das semifinais, nem de algumas rodadas da Sul-Americana; nessas datas, só o árbitro central está coberto. <b>Comissão de Arbitragem:</b> Rodrigo Cintra foi demitido em 9/6/2026 e Sandro Meira Ricci assumiu; cada hiato é classificado como “sob Cintra”, “sob Ricci” ou “atravessa a troca”. <b>O que fez no hiato:</b> ao lado de cada barra aparecem as outras escalas do VAR no período (VAR na Série B, AVAR ou funções de campo na Série A, Série B e Copa do Brasil). "Sem escala" significa que não apareceu em nenhuma dessas três competições, em nenhuma função. Estaduais, Série C e competições internacionais não entram nessa conta.`;
+})();
+
+function perfil(id){
+  const a=arbs.find(x=>x.id===id); if(!a) return false;
+  const big=a.gaps[a.best];
+  const sa=a.jogos.filter(j=>j.comp==="Série A"), cdb=a.jogos.filter(j=>j.comp==="Copa do Brasil"), wc=a.jogos.filter(j=>!["Série A","Copa do Brasil"].includes(j.comp));
+  const porComp={}; wc.forEach(j=>porComp[j.comp]=(porComp[j.comp]||0)+1);
+  const wcDates=wc.map(j=>iso(j.data));
+  const rounds=new Set(sa.map(j=>+j.etapa.replace(/\D/g,"")));
+  const cdbDates=cdb.map(j=>iso(j.data));
+  const gapR=new Set(big.rodadas), R=D.rodadas;
+  let strip="",lbl="";
+  for(let r=1;r<=38;r++){
+    const fut=R[r]>D.hoje;
+    const inR=d=>d<=R[r]&&(r===1||d>R[r-1]);
+    const troca=r>1&&R[r-1]<TROCA&&TROCA<=R[r]; const has=cdbDates.some(inR), hasW=wcDates.some(inR);
+    strip+=`<div class="cell${rounds.has(r)?" on":""}${gapR.has(r)?" gap":""}${fut?" fut":""}${troca?" troca":""}" title="Rodada ${r} (${fd(R[r])})${troca?" · primeira rodada com Sandro Meira Ricci na comissão":""}${rounds.has(r)?": foi o VAR":""}${has?" · Copa do Brasil antes desta rodada":""}${hasW?" · jogo internacional antes desta rodada":""}">${has?'<i class="cdbmark"></i>':""}${hasW?'<i class="cdbmark wc"></i>':""}</div>`;
+    lbl+=`<span>${r%5===0||r===1?r:""}</span>`;
+  }
+  let rows="";
+  const gapRow=(g,txt)=>`<tr class="gaprow"><td colspan="5">${g===big?"<b>Maior hiato:</b> ":""}${txt}${outrosHtml(g)}</td></tr>`;
+  a.jogos.forEach((j,i)=>{
+    const g=a.gaps[i];
+    if(g.rodadas.length>=3||g===big) rows+=gapRow(g, g.tipo==="inicio"?`${diasTxt(g)} e ${plural(g.rodadas.length,"rodada","rodadas")} antes da estreia`:`${diasTxt(g)} e ${plural(g.rodadas.length,"rodada","rodadas")} da Série A sem ser VAR na elite`);
+    rows+=`<tr><td>${fdb(j.data)}</td><td><span class="tag ${j.comp==="Série A"?"a":j.comp==="Copa do Brasil"?"c":"w"}">${j.comp}</span></td><td>${esc(j.etapa)}</td><td>${esc(j.mandante)} ${j.gm??""} x ${j.gv??""} ${esc(j.visitante)}${j.central?`<br><small style="color:var(--muted)">Árbitro: ${esc(j.central)}</small>`:""}</td><td>${esc(j.local)}</td></tr>`;
+  });
+  const last=a.gaps[a.gaps.length-1];
+  if(last.rodadas.length>=1) rows+=gapRow(last,`Sem jogo na elite desde então: ${diasTxt(last)} e ${plural(last.rodadas.length,"rodada","rodadas")} da Série A`);
+  document.getElementById("perfil").innerHTML=`<section>
+    <button class="back" onclick="location.hash=''">← Voltar ao ranking</button>
+    <div><div class="eyebrow">VAR · ${a.uf}</div>
+    <div class="phead"><h1 style="margin:4px 0">${esc(a.nome)}</h1><span class="pill">${a.cat}</span></div></div>
+    <div class="stats">
+      <div class="stat"><b>${sa.length+cdb.length}</b><span>jogos como VAR em Série A e Copa do Brasil</span></div>
+      <div class="stat"><b>${sa.length}</b><span>na Série A</span></div>
+      <div class="stat"><b>${cdb.length}</b><span>na Copa do Brasil${Object.entries(porComp).map(([k,v])=>` · +${v} na ${k}`).join("")}</span></div>
+      <div class="stat"><b>${big.rodadas.length}</b><span>rodadas no maior hiato (${big.util} dias)</span></div>
+    </div>
+    <p class="note">${gapText(big)}, período ${eraTxt(big)}. ${resumo(big)}.${PAR(a)?" <b>Fora da comparação:</b> segue trilha paralela no futebol feminino, em preparação para a Copa do Mundo Feminina de 2027, então o hiato na elite masculina não indica afastamento.":""}</p>
+  </section>
+  <section>
+    <h2>Rodada a rodada na Série A</h2>
+    <div class="legend"><span><i class="sw"></i>Foi o VAR na rodada</span><span><i class="sw" style="background:var(--line);box-shadow:inset 0 -4px 0 var(--card)"></i>Maior hiato</span><span><i class="sw" style="background:var(--cdb);width:8px;height:8px;border-radius:50%"></i>Jogo de Copa do Brasil antes da rodada</span><span><i class="sw" style="width:2px;height:14px;background:var(--troca)"></i>Troca na comissão (Ricci assume em 9/6)</span>${wc.length?'<span><i class="sw" style="background:var(--card);width:8px;height:8px;border-radius:50%"></i>Jogo internacional (Libertadores, Sul-Americana ou Copa do Mundo)</span>':""}<span><i class="sw" style="background:transparent;border:1px dashed var(--muted)"></i>Rodada futura</span></div>
+    <div class="strip-wrap"><div class="strip">${strip}</div><div class="strip-lbl">${lbl}</div></div>
+  </section>
+  <section>
+    <h2>Todos os jogos</h2>
+    <div class="tbl"><table><thead><tr><th>Data</th><th>Torneio</th><th>Etapa</th><th>Jogo</th><th>Local</th></tr></thead><tbody>${rows}</tbody></table></div>
+  </section>`;
+  return true;
+}
+function route(){
+  tip.hidden=true;
+  const m=location.hash.match(/^#arbitro-(\d+)$/);
+  const ok=!!(m&&perfil(m[1]));
+  document.getElementById("home").hidden=ok;
+  document.getElementById("perfil").hidden=!ok;
+  scrollTo(0,0);
+}
+addEventListener("hashchange",route);
+drawChart(); drawTimeline(); route();
+</script>
