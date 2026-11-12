@@ -8,7 +8,7 @@ CAT = "VAR-FIFA-PRO"
 PAUSA_INI, PAUSA_FIM = dt.date(2026, 6, 1), dt.date(2026, 7, 16)
 def util(a, b):
     return (b - a).days - max(0, (min(b, PAUSA_FIM) - max(a, PAUSA_INI)).days)
-FASE = {"1995":"1ª fase","1996":"2ª fase","1997":"3ª fase","1998":"4ª fase","1999":"5ª fase","2000":"Oitavas","2001":"Quartas","2002":"Semifinal"}
+FASE = {"1995":"1ª fase","1996":"2ª fase","1997":"3ª fase","1998":"4ª fase","1999":"5ª fase","2000":"Oitavas","2001":"Quartas","2002":"Semifinal","2003":"Final"}
 FUN = {"arbitro":"Árbitro","var":"VAR","avar":"AVAR","avar2":"AVAR 2","quarto arbitro":"Quarto árbitro","arbitro assistente 1":"Assistente","arbitro assistente 2":"Assistente"}
 P = lambda s: dt.datetime.strptime(s.strip(), "%d/%m/%Y").date()
 elite = collections.defaultdict(list); info = {}; esc = collections.defaultdict(list)
@@ -19,10 +19,11 @@ for f, c in files:
     if c == "CDB":
         fid, r = key.split("-"); etapa = FASE[fid] + (f" (jogo {r})" if fid >= "1999" else "")
     else: etapa = f"Rodada {key}"
-    for g in json.load(open(f, encoding="utf-8")).get("jogos", []):
+    _d = json.load(open(f, encoding="utf-8"))
+    for g in (_d.get("jogos", []) if isinstance(_d, dict) else []):
         for j in g["jogo"]:
-            d = P(j["data"])
-            if d > HOJE: continue
+            try: d = P(j["data"])
+            except ValueError: continue  # jogo sem data definida
             central = next((a["nome"] for a in j.get("arbitros", []) if a["funcao"].strip().lower() == "arbitro"), "")
             for a in j.get("arbitros", []):
                 fn = a["funcao"].strip().lower()
@@ -52,7 +53,7 @@ for rid, js in elite.items():
         da, db = P(a["data"]), P(b["data"])
         gaps.append({"tipo": "entre", "ini": str(da), "fim": str(db), "dias": (db-da).days, "util": util(da, db), "rodadas": entre(da, db)})
     dl = P(js[-1]["data"])
-    gaps.append({"tipo": "aberto", "ini": str(dl), "fim": str(HOJE), "dias": (HOJE-dl).days, "util": util(dl, HOJE), "rodadas": entre(dl, HOJE, True)})
+    if dl < HOJE: gaps.append({"tipo": "aberto", "ini": str(dl), "fim": str(HOJE), "dias": (HOJE-dl).days, "util": util(dl, HOJE), "rodadas": entre(dl, HOJE, True)})
     E = sorted(esc[rid], key=lambda x: x["data"])
     for g in gaps:
         i, f_ = dt.date.fromisoformat(g["ini"]), dt.date.fromisoformat(g["fim"])

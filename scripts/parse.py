@@ -1,12 +1,12 @@
 import json, sys, os, glob, collections
 raw = sys.argv[1]; out = sys.argv[2]
-FASE = {"1995":"1ª fase","1996":"2ª fase","1997":"3ª fase","1998":"4ª fase","1999":"5ª fase","2000":"Oitavas","2001":"Quartas","2002":"Semifinal"}
+FASE = {"1995":"1ª fase","1996":"2ª fase","1997":"3ª fase","1998":"4ª fase","1999":"5ª fase","2000":"Oitavas","2001":"Quartas","2002":"Semifinal","2003":"Final"}
 games = []
 for f in sorted(glob.glob(os.path.join(raw, "*.json"))):
     name = os.path.basename(f)[:-5]
     comp, key = name.split("_")
     d = json.load(open(f, encoding="utf-8"))
-    for g in d.get("jogos", []):
+    for g in (d.get("jogos", []) if isinstance(d, dict) else []):
         for j in g["jogo"]:
             arb = [a for a in j.get("arbitros", []) if a.get("funcao","").strip().lower() == "arbitro"]
             if comp == "A": etapa = f"Rodada {key}"

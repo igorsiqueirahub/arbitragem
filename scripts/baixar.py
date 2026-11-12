@@ -10,7 +10,7 @@ def get(path):
             err = e; time.sleep(2)
     print("FALHA", path, err); return None
 jobs = [("A", r, f"1260611/rodada/{r}/fase") for r in range(1, 39)]
-fases = {1995:1,1996:1,1997:1,1998:1,1999:2,2000:2,2001:2,2002:2}
+fases = {1995:1,1996:1,1997:1,1998:1,1999:2,2000:2,2001:2,2002:2,2003:2}
 for f, n in fases.items():
     for r in range(1, n + 1):
         jobs.append(("CDB", f"{f}-{r}", f"1260615/rodada/{r}/fase/{f}"))

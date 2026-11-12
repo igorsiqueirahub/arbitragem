@@ -29,7 +29,7 @@ Os scripts ficam em `scripts/` e recebem os caminhos como argumentos. A ordem é
 2. Série B: mesma API com o id 1260612 (rodadas 1 a 38), salvando como `B_<rodada>.json` em outra pasta.
 3. `parse.py <pasta_raw> games.json`: extrai o árbitro central de cada jogo.
 4. Conmebol: `wiki_conmebol.py`, `parse_pdf.py`, `build_conmebol.py` e `limpa_jogo.py` geram `dados/conmebol.json`.
-5. `calc.py games.json result.json dados/conmebol.json` e `annot.py result.json <raw> <rawb> dados/arbitros.json dados/conmebol.json`.
+5. `calc.py games.json result.json dados/conmebol.json AAAA-MM-DD` (data de referência; jogos já escalados depois dela entram como próximo jogo) e `annot.py result.json <raw> <rawb> dados/arbitros.json dados/conmebol.json`.
 6. `calc_var.py <raw> <rawb> dados/arbitros.json dados/var.json dados/conmebol.json`.
 7. Monta as páginas:
 
@@ -38,4 +38,4 @@ python scripts/build_site.py modelos/arbitros.html dados/arbitros.json index.htm
 python scripts/build_site.py modelos/var.html dados/var.json var.html index.html
 ```
 
-A data de referência ("hoje") fica em `calc.py`, na constante `HOJE`.
+Jogos escalados e ainda não disputados aparecem com a etiqueta "escalado" e fecham o hiato de quem volta a ser escalado. A Série B tem jogos com data "A Definir", que ficam de fora.

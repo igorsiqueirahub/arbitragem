@@ -1,7 +1,7 @@
 import json, sys, glob, os, datetime as dt, collections
 res_p, raw, rawb, out = sys.argv[1:5]
 R = json.load(open(res_p, encoding="utf-8")); HOJE = dt.date.fromisoformat(R["hoje"])
-FASE = {"1995":"1ª fase","1996":"2ª fase","1997":"3ª fase","1998":"4ª fase","1999":"5ª fase","2000":"Oitavas","2001":"Quartas","2002":"Semifinal"}
+FASE = {"1995":"1ª fase","1996":"2ª fase","1997":"3ª fase","1998":"4ª fase","1999":"5ª fase","2000":"Oitavas","2001":"Quartas","2002":"Semifinal","2003":"Final"}
 FUN = {"arbitro":"Árbitro","var":"VAR","avar":"AVAR","avar2":"AVAR 2","quarto arbitro":"Quarto árbitro","arbitro assistente 1":"Assistente","arbitro assistente 2":"Assistente"}
 esc = collections.defaultdict(list)
 files = [(f, "A") for f in glob.glob(os.path.join(raw, "A_*.json"))] + [(f, "CDB") for f in glob.glob(os.path.join(raw, "CDB_*.json"))] + [(f, "B") for f in glob.glob(os.path.join(rawb, "B_*.json"))]
@@ -9,10 +9,11 @@ for f, c in files:
     key = os.path.basename(f)[:-5].split("_")[1]
     comp = {"A":"Série A","B":"Série B","CDB":"Copa do Brasil"}[c]
     etapa = f"Rodada {key}" if c != "CDB" else FASE[key.split("-")[0]]
-    for g in json.load(open(f, encoding="utf-8")).get("jogos", []):
+    _d = json.load(open(f, encoding="utf-8"))
+    for g in (_d.get("jogos", []) if isinstance(_d, dict) else []):
         for j in g["jogo"]:
-            d = dt.datetime.strptime(j["data"].strip(), "%d/%m/%Y").date()
-            if d > HOJE: continue
+            try: d = dt.datetime.strptime(j["data"].strip(), "%d/%m/%Y").date()
+            except ValueError: continue  # jogo sem data definida
             for a in j.get("arbitros", []):
                 fn = a.get("funcao","").strip().lower()
                 if fn not in FUN: continue

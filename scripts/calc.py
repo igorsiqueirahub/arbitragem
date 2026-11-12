@@ -1,6 +1,6 @@
 import json, sys, re, datetime as dt, collections, statistics
 g = json.load(open(sys.argv[1], encoding="utf-8")); out = sys.argv[2]
-HOJE = dt.date(2026, 11, 10)
+HOJE = dt.date.fromisoformat(sys.argv[4]) if len(sys.argv) > 4 else dt.date.today()
 P = lambda s: dt.datetime.strptime(s, "%d/%m/%Y").date()
 # data de referência de cada rodada = mediana das datas
 rd = {}
@@ -19,7 +19,7 @@ WC = {"Wilton Pereira Sampaio": [("11/06/2026","México","África do Sul","Está
 refs = collections.defaultdict(list); info = {}
 for x in g:
     a = x["arbitro"]
-    if not a or "PRO" not in a["categoria"] or P(x["data"]) > HOJE: continue
+    if not a or "PRO" not in a["categoria"]: continue  # jogos futuros já escalados também entram
     info[a["id"]] = a
     refs[a["id"]].append(x)
 for rid, a in info.items():
@@ -47,7 +47,7 @@ for rid, js in refs.items():
         da, db = P(a["data"]), P(b["data"])
         gaps.append({"tipo": "entre", "de": a["id"], "ate": b["id"], "ini": str(da), "fim": str(db), "dias": (db - da).days, "util": util(da, db), "rodadas": rodadas_entre(da, db)})
     dl = P(js[-1]["data"])
-    gaps.append({"tipo": "aberto", "de": js[-1]["id"], "ate": None, "ini": str(dl), "fim": str(HOJE), "dias": (HOJE - dl).days, "util": util(dl, HOJE), "rodadas": rodadas_entre(dl, HOJE, True)})
+    if dl < HOJE: gaps.append({"tipo": "aberto", "de": js[-1]["id"], "ate": None, "ini": str(dl), "fim": str(HOJE), "dias": (HOJE - dl).days, "util": util(dl, HOJE), "rodadas": rodadas_entre(dl, HOJE, True)})
     best = max(gaps, key=lambda z: (len(z["rodadas"]), z["dias"]))
     bestd = max(gaps, key=lambda z: (z["util"], len(z["rodadas"])))
     a = info[rid]
