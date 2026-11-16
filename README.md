@@ -4,6 +4,7 @@ Quanto tempo cada árbitro do quadro PRO da CBF ficou sem trabalhar em jogos da 
 
 - `index.html`: árbitros centrais (categorias FIFA-PRO, AB-PRO e MASTER-PRO)
 - `var.html`: VARs (categoria VAR-FIFA-PRO)
+- `ouvidoria.html`: procedimentos da Ouvidoria da Diretoria de Arbitragem em 2026 (fonte: Relatório Ouvidoria 2026 da CBF; lances procedentes e improcedentes por competição lidos das coordenadas vetoriais das barras do PDF)
 
 Cada nome abre um perfil com todos os jogos, o maior hiato e o que o árbitro fez nesse período (Série B, VAR, AVAR, quarto árbitro).
 
